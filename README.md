@@ -24,12 +24,12 @@ Main Functionalities
 
    Methods:
    
-           isAvailable : to check if book is available or borrowed.
-           display : to display book details.
+           isAvailable() : to check if book is available or borrowed.
+           display() : to display book details.
            Constructors
            getters and setters
    
-3. Patron
+2. Patron
    we have a patrons package inside which we have Patron java class.
 
    Functions of Patron Class:
@@ -48,9 +48,9 @@ Main Functionalities
 
    Methods:
    
-           updateinfo : to update info of the patron . note patron ID can't be changed.
-           borrowBook : to add all the books borrowed at present and in history in the borrowBooks and borrowHistory list in this class resp.
-           returnBook : to remove the retured book from borrowBooks list and mark the book as available.
+           updateinfo() : to update info of the patron . note patron ID can't be changed.
+           borrowBook() : to add all the books borrowed at present and in history in the borrowBooks and borrowHistory list in this class resp.
+           returnBook() : to remove the retured book from borrowBooks list and mark the book as available.
            Constructor
            getters and setters
 
@@ -66,7 +66,63 @@ Main Functionalities
  		issueDate : Map<String, LocalDate> // to have issueDate associated with each bookId
 		returnDate : Map<String ,LocalDate>	// to have returnDate associated with each bookId
 		BookIssuedbyPatron : Map<String, Patron>	// to have patron who issued this book with the bookId provided as key in this map
-		reservationMap : Map<String, List<<Reservation>> //
+		reservationMap : Map<String, List<<Reservation>> // to have reservation list corresponding to the bookID 
+
+	Methods:
+
+		lendBook() : to lend the book to the patron if book is available and if in reservationMap , remove it from there . If book is not available then reserveBook
+		returnBook() : to return the book to the library if it was borrowed and notify patron in reservation Queue
+		reserveBook() : to mark the book as reserved if it is not available and add it in book's reservation Queue
+		notifyNextPatron() : to notify the next patron in the book reservation Queue that the book he/she had marked reserved is now avalable
+		Constructors
+		getters and setters
+
+Reservation class:
+		This class is used to create reservation List . This class is composed by lends class.
+
+        Attributes:
+
+   		bookISBN : String;
+   		patronIID : String;
+   		reservationDate : LocalDate;
+
+        Methods:
+
+   		Constructors
+   		Getters
    
 5. Inventory
-Still editing till todays deadline of submission
+   This package contains all the library Inventory functionalities.
+   It has two interfaces BookManagement and InventoryManagement and these are implemented by class Library.
+
+     BookManagement Interface:
+	have all the operation related to books
+
+		addBook();
+   		removeBook();
+   		updateBook();
+   		searchBookbyTitle();
+   		searchBookbyAuthor();
+   		searchBookbyISBN();
+
+     InventoryManagement Interface:
+
+   		listAvailableBooks();
+   		listBorrowedBooks();
+   		getBooksBorrowedByPatron();
+
+   Library Class :
+   	composes books and patrons
+	
+ 	Attributes :
+
+		books : Map<String, Book>
+		patrons : Map<String, Patron>
+
+	Methods:
+
+		Constructors
+		getters and setters
+		Interface methods
+		addPatron();
+
