@@ -69,3 +69,4 @@ Main Functionalities
 		reservationMap : Map<String, List<<Reservation>> //
    
 5. Inventory
+Still editing till todays deadline of submission
