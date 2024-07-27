@@ -6,6 +6,7 @@ we have created diferent packages to easily understand and implement differents 
 
 Main Functionalities
 1. Book:
+   
    we have books package inside that we have book java class.
 
    Functions of Book class:
@@ -29,7 +30,8 @@ Main Functionalities
            Constructors
            getters and setters
    
-2. Patron
+2. Patron:
+   
    we have a patrons package inside which we have Patron java class.
 
    Functions of Patron Class:
@@ -91,7 +93,7 @@ Reservation class:
    		Constructors
    		Getters
    
-5. Inventory
+4. Inventory
    This package contains all the library Inventory functionalities.
    It has two interfaces BookManagement and InventoryManagement and these are implemented by class Library.
 
@@ -126,3 +128,6 @@ Reservation class:
 		Interface methods
 		addPatron();
 
+5. LibraryManagementSystem class:
+
+    	This is the main class for simulation.
